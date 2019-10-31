@@ -18,7 +18,7 @@ Usage overview
 
 Require module and pass in your API Google project API key after enabling the API service. Note: This module currently doesn't support oauth authentication.
 
-    var googleTranslate = require('google-translate')(apiKey);
+    var googleTranslate = require('google-translate')(apiKey, options);
 
 String translation:
 
@@ -41,7 +41,7 @@ Language detection:
 **Bulk translations**:  Passing an array of strings greater than 5k characters will be result in multiple concurrent asynchronous calls. Once all calls are completed, the response will be parsed, merged, and  passed to the callback. The default maximum concurrent requests is 10. You can override this value by passing in a new limit when you pass in your API key: `require('google-translate')(apiKey, { concurrentLimit: 20 })`
 
 ## options
-Now available options are `concurrentLimit` and `requestOptions`. Refer follow example:
+Now available options are `concurrentLimit` and `requestOptions`. Refer to the following example:
 ```
 var fs = require('fs');
 var apiKey = 'AXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXY';
